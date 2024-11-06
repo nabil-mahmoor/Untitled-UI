@@ -4,6 +4,9 @@
 
 :root {
     --side-padding: 3rem;
+    --black: #000;
+    --white: #fff;
+    --grey: #ffffff87;
 }
 
 * {
@@ -20,7 +23,13 @@ html {
 
 body {
     font-family: "Poppins";
-    margin-bottom: 2rem;
+    min-height: 100dvh;
+    width: 100vw;
+    padding: calc(var(--side-padding) / 2) var(--side-padding);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--side-padding) / 2);
 }
 
 h1 {
@@ -46,7 +55,7 @@ h4 {
 
 h5 {
     font-size: 2rem;
-    margin-bottom: .25em;
+    margin-bottom: .5rem;
 }
 
 button {
@@ -62,13 +71,12 @@ ul {
 
 a {
     text-decoration: none;
-    color: #000;
+    color: var(--black);
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem var(--side-padding);
     align-items: center;
     font-weight: bold;  
 }
@@ -79,36 +87,67 @@ header {
     font-weight: bold;
 }
 
-header nav ul {
+header nav ul:not(.sidebar) {
     display: flex;
     gap: 1.5em;
 }
 
-li a {
+li {
     padding: .5em .7em;
+    border-radius: 5px;
+    transition: ease .5s;
 }
 
-a.active {
-    background-color: #000;
-    border-radius: 5px;
-    color: #fff;
+li.active {
+    background-color: var(--black);
+
+    a {
+        color: var(--white);
+    }
+}
+
+header nav .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar li {
+    padding: .8em;
+}
+
+.sidebar li a {
+    display: block;
+    margin-left: 1rem;
+    padding: unset;
+    border-radius: unset;
+}
+
+.sidebar li {
+    width: 100%;
 }
 
 .signing button {
-    border: 2px solid #000;
-    background-color: #000;
-    color: #fff;
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: var(--white);
     margin-left: 1rem;
 }
 
 
 .signing button:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .container {
-    padding: 0 var(--side-padding);
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -136,23 +175,23 @@ a.active {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    color: #fff;
+    color: var(--white);
 }
 
 .featured h4 {
     width: fit-content;
-    border: 2px solid #fff;
+    border: 2px solid var(--white);
     border-radius: 20px;
     padding: .4em 1em;
 }
 
 .featured p {
     line-height: 1.7em;
-    color: #ffffffdb;
+    color: var(--white)fffdb;
 }
 
 .posts {
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -169,7 +208,7 @@ a.active {
 }
 
 .recent-post {
-    margin-bottom: 2rem;
+    margin-bottom: .5rem;
     border-radius: 25px;
     min-width: 22rem;
     max-width: 28rem;
@@ -202,7 +241,7 @@ a.active {
 }
 
 .content p {
-    color: #000000bc;
+    color: var(--black)000bc;
 }
 
 .load {
@@ -212,26 +251,22 @@ a.active {
 }
 
 .load button {
-    border: 2px solid #000;
-    background-color: #fff;
-    color: #000;
+    border: 2px solid var(--black);
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .load button:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-footer {
-    padding: 0 var(--side-padding);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 footer .wrapper {
     padding: var(--side-padding);
     border-radius: 20px;
     text-align: center;
-    background-color: #000;
-    color: #ffffff94;
+    background-color: var(--black);
+    color: var(--grey);
     display: flex;
     flex-direction: column;
     gap: 6rem;
@@ -245,7 +280,11 @@ footer div h5,
 footer .links .link-title,
 footer .logo,
 footer .credits{
-    color: #fff;
+    color: var(--white);
+}
+
+.links li {
+    color: var(--grey);
 }
 
 .links li,
@@ -270,7 +309,7 @@ footer .links {
 }
 
 .links li:hover {
-    color: #fff;
+    color: var(--white);
 }
 
 footer .credits {
