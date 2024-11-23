@@ -9,17 +9,6 @@ window.addEventListener("scroll", () => {
     document.getElementById("title").classList.toggle("sticky", window.scrollY > 0);
 })
 
-// const scrollWatcher = document.createElement("div");
-// scrollWatcher.setAttribute("data-scroll-watcher", "");
-// header.after(scrollWatcher);
-
-// const navObserver = new IntersectionObserver((entries) => {
-//     console.log(entries);
-//     header.classList.toggle("sticky", entries[0].isIntersecting)
-// });
-
-// navObserver.observe(scrollWatcher);
-
 
 const headlines = () => {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`)
