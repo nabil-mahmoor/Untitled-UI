@@ -1,4 +1,4 @@
-import API_KEY from "./apikey.js";
+import API_KEY from "./secretkey.js";
 
 let allArticles;
 const recentSection = document.querySelector(".recent");
