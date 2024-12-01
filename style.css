@@ -24,20 +24,22 @@ html {
 body {
   font-family: "Poppins";
   min-height: 100dvh;
-  width: 100vw;
+  max-width: 1600px;
+  margin-inline: auto;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
 
+
 h1 {
-  font-size: clamp(2rem, 1.5rem + 2vw, 4vw);
+  font-size: 2.3rem;
   font-weight: 500;
 }
 
 h2 {
-  font-size: clamp(1rem, 0.6rem + 1vw, 3vw);
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-weight: 700;
 }
 
 h3 {
@@ -283,7 +285,6 @@ footer .wrapper {
   gap: 6rem;
 }
 
-
 footer div h5,
 footer .links .link-title,
 footer .logo,
@@ -293,7 +294,7 @@ footer .credits {
 
 footer .links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 250px));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   justify-content: center;
 }
 
@@ -337,6 +338,7 @@ footer a {
   font: inherit;
   color: inherit;
 }
+
 
 @media (max-width: 850px) {
   header {
