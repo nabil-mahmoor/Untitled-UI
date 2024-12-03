@@ -18,15 +18,10 @@
             </span>
         </a>
         <span class="menu">
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars" onclick="openSidebar()"></i>
         </span>
         <nav>
-            <ul class="sidebar">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <ul>
+            <ul class="topBar">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -36,6 +31,31 @@
             <a href="login.html">Log in</a>
             <button>Sign up</button>
         </span>
+        <ul class="sideBar hide" id="sideBar">
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li class="line"></li>
+            <li class="signing">
+                    <a href="login.html">Log in</a>
+                    <button>Sign up</button>
+            </li>
+        </ul>
     </header>
 
     <section class="featured">
@@ -45,7 +65,9 @@
                 Breaking Into Product Design: Advice from Untitled Founder, Frankie
             </h1>
             <p>
-                Let's get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design. We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get into this growing industry.
+                Let's get one thing out of the way: you don't need a fancy Bachelor's Degree to get into Product Design.
+                We sat down with Frankie Sullivan to talk about gatekeeping in product design and how anyone can get
+                into this growing industry.
             </p>
         </div>
     </section>
@@ -56,7 +78,8 @@
 
                 <div class="recent-post">
                     <div class="img">
-                        <img src="https://images.unsplash.com/photo-1653226439336-177c4c1ccc51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1653226439336-177c4c1ccc51?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="">
                     </div>
                     <div class="content">
                         <h3>Migrating to Linear 101</h3>
@@ -68,7 +91,8 @@
                 </div>
                 <div class="recent-post">
                     <div class="img">
-                        <img src="https://images.unsplash.com/photo-1698434156088-a80e7bcdd198?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdpcmVmcmFtZXxlbnwwfDB8MHx8fDI%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1698434156088-a80e7bcdd198?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdpcmVmcmFtZXxlbnwwfDB8MHx8fDI%3D"
+                            alt="">
                     </div>
                     <div class="content">
                         <h3>What is Wireframing?</h3>
@@ -80,7 +104,8 @@
                 </div>
                 <div class="recent-post">
                     <div class="img">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhcHRvcHxlbnwwfDB8MHx8fDI%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxhcHRvcHxlbnwwfDB8MHx8fDI%3D"
+                            alt="">
                     </div>
                     <div class="content">
                         <h3>Building your API Stack</h3>
@@ -92,7 +117,8 @@
                 </div>
                 <div class="recent-post">
                     <div class="img">
-                        <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFwdG9wfGVufDB8MHwwfHx8Mg%3D%3D" alt="">
+                        <img src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFwdG9wfGVufDB8MHwwfHx8Mg%3D%3D"
+                            alt="">
                     </div>
                     <div class="content">
                         <h3>PM mental models</h3>
@@ -104,7 +130,8 @@
                 </div>
                 <div class="recent-post">
                     <div class="img">
-                        <img src="https://images.unsplash.com/photo-1635684542893-1e265eb8138d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIyfHx8ZW58MHx8fHx8" alt="">
+                        <img src="https://images.unsplash.com/photo-1635684542893-1e265eb8138d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIyfHx8ZW58MHx8fHx8"
+                            alt="">
                     </div>
                     <div class="content">
                         <h3>Our top 10 JavaScript Frameworks</h3>
@@ -115,7 +142,8 @@
                 </div>
                 <div class="recent-post">
                     <div class="img">
-                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="">
                     </div>
                     <div class="content">
                         <h3>How collaboration makes us better
@@ -207,6 +235,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        
+        function openSidebar() {
+            document.getElementById('sideBar').classList.toggle('hide');
+        }
+
+    </script>
 </body>
 
 </html>

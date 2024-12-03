@@ -31,7 +31,6 @@ body {
   flex-direction: column;
 }
 
-
 h1 {
   font-size: 2.3rem;
   font-weight: 500;
@@ -75,6 +74,7 @@ a {
 }
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,12 +88,12 @@ header {
   font-weight: bold;
 }
 
-header nav ul:not(.sidebar) {
+header nav .topBar {
   display: flex;
   gap: 1.5em;
 }
 
-li {
+.topBar li {
   padding: 0.5em 0.7em;
   border-radius: 5px;
   transition: ease 0.5s;
@@ -107,39 +107,74 @@ li.active {
   }
 }
 
-header nav .sidebar {
+header .sideBar.hide {
   display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 250px;
-  z-index: 99;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar li {
-  padding: 0.8em;
-}
-
-.sidebar li a {
+header .sideBar {
+  padding-block: .5rem;
   display: block;
-  margin-left: 1rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  z-index: 99;
+  background-color: #fbfbfb;
+  border-radius: 0 0 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.sideBar li {
+  padding: 1em 1.5em;
+}
+
+.sideBar li a {
+  display: flex;
+  align-items: center;
+  gap: 1em;
   padding: unset;
   border-radius: unset;
 }
 
-.sidebar li {
-  width: 100%;
+.sideBar li i {
+  color: inherit;
+}
+
+.sideBar .line {
+  padding: unset;
+  margin-top: 1rem;
+  height: 1px;
+  width: 90%;
+  background-color: var(--black6);
+  margin-inline: auto;
+}
+
+.sideBar .signing {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 5px;
+
+  * {
+    display: inline;
+    text-align: center;
+  }
+
+  a {
+    border: 2px solid var(--black);
+    padding: 0.7em 1.1em;
+    border-radius: 5px;
+  }
+}
+
+.signing a {
+  padding: 0.7em 1.1em;
 }
 
 .signing button {
   border: 2px solid var(--black);
   background-color: var(--black);
   color: var(--white);
-  margin-left: 1rem;
 }
 
 .signing button:hover {
@@ -222,7 +257,7 @@ header nav .sidebar {
 }
 
 .recent-post {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transition: ease 0.5s;
 }
 
@@ -308,10 +343,10 @@ footer .links {
 .links li,
 .credits .copyrights {
   font-weight: 300;
-  margin-bottom: 0.4em;
 }
 
 .links li {
+  margin-bottom: 1rem;
   color: var(--white6);
   text-align: left;
   transition: 0.5s ease;
@@ -339,14 +374,13 @@ footer a {
   color: inherit;
 }
 
-
 @media (max-width: 850px) {
   header {
     padding: var(--top-padding);
   }
 
   header nav,
-  header .signing {
+  header > .signing {
     display: none;
   }
 
@@ -383,6 +417,11 @@ footer a {
 }
 
 @media (max-width: 550px) {
+  header .sideBar {
+    width: 100%;
+    border-radius: unset;
+  }
+
   .featured p {
     display: none;
   }
